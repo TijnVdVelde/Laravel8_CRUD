@@ -4,10 +4,10 @@
     <div class="row">
         <div class="col-lg-12">
             <div class="pull-left">
-                <h2>Laravel 8 CRUD Example</h2>
+                <h2>Laravel 8 CRUD Voorbeeld</h2>
             </div>
             <div class="pull-right">
-                <a class="btn btn-success" href="{{ route('products.create') }}"> Create New Product</a>
+                <a class="btn btn-success" href="{{ route('products.create') }}"> Creeër een nieuw product</a>
             </div>
         </div>
     </div>
@@ -21,9 +21,9 @@
     <table class="table table-bordered">
         <tr>
             <th>ID</th>
-            <th>Name</th>
-            <th>Details</th>
-            <th width="280px">Action</th>
+            <th>Naam</th>
+            <th>Inhoud</th>
+            <th width="280px">Actie</th>
         </tr>
         @foreach ($products as $product)
         <tr>
@@ -32,11 +32,11 @@
             <td>{{ $product->detail }}</td>
             <td>
                 <form action="{{ route('products.destroy',$product->id) }}" method="POST">
-                    <a class="btn btn-info" href="{{ route('products.show',$product->id) }}">Show</a>
+                    <a class="btn btn-info" href="{{ route('products.show',$product->id) }}">Open</a>
                     <a class="btn btn-primary" href="{{ route('products.edit',$product->id) }}">Edit</a>
                     @csrf
                     @method('DELETE')
-                    <button type="submit" class="btn btn-danger">Delete</button>
+                    <button type="submit" class="btn btn-danger">Verwijder</button>
                 </form>
             </td>
         </tr>
